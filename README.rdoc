@@ -1,6 +1,6 @@
 == README
 
-Freemail is an email appplcation built with Ruby on Rails,JS/jQuery and SASS.
+Freemail is an email appplcation built with Ruby on Rails, JS/jQuery and SASS.
 
 Users can sign up/log with Rails authentication using has_secure_password
 
