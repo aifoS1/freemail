@@ -1,0 +1,17 @@
+
+<main class="gateway">
+
+<h1>Change your password</h1>
+
+  <%= form_for @user do |f| %>
+
+	 <%= password_field_tag "user[current_password]", nil, placeholder: "current password" %> 
+	   <br/>
+	 <%= f.password_field :password, placeholder: "new password" %>
+	   <br/>
+	 <%= f.password_field :password_confrimation, placeholder: "confirm new password" %>
+	   <br/>
+	 <%= f.submit "Update password" %>
+  <% end %>
+
+</main>

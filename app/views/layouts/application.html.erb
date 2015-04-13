@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Freemail</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if current_user %>
+ <nav class="logged-in clearfix">
+ 	<div class="logo">Freemail</div>
+
+ 	<ul class= "clearfix">
+ 	 <li>
+   <%= button_to "Log Out", session_url, method: "delete"%>
+     </li>
+     <li>
+  <%= link_to "Change Password", edit_user_url(current_user)%>
+   </li>
+    <% if action_name != "inbox" %>
+   <li>
+  <%= link_to "Inbox", inbox_url(current_user) %>
+  </li>
+   <% end %>
+ </ul>
+</nav>
+
+<% end %>
+<%= yield %>
+
+</body>
+</html>

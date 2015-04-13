@@ -1,0 +1,14 @@
+<main class="gateway">
+
+<h1>Log in to Freemail!</h1>
+
+<%= form_for @user, as: :session, url: session_url do |f| %>
+
+ <%= f.text_field :username, placeholder: "username" %> @freemail.com
+   <br/>
+   <%= f.password_field :password, placeholder: "password" %>
+   <br/>
+   <%= f.submit "Log in" %>
+<% end %>
+
+</main>

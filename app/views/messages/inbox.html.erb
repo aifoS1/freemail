@@ -1,0 +1,40 @@
+
+<main class="inbox clearfix">
+  <nav>
+    <ul id="navigation">
+      <li data-method="get-received">Received</li>
+      <li data-method="get-sent">Sent</li>
+      <li data-method="compose">Compose</li>
+    </ul>
+ </nav>
+  <section class="messages ">
+     <h3 class="currentBox">Inbox</h3>
+    <ul>
+
+
+    </ul>
+  </section>
+</main>
+
+
+  <form id="compose" class="clearfix">
+     To: <select name="recipient_id">
+      <% @users.each do |user| %>
+       <option value="<%= user.id %>">
+        <%= user.username %>
+       </option>
+      <% end %>
+    </select>
+     <label for="important">Important</label>
+     <input type="checkbox" id="important" name="important" value="true">
+     <div class="close-window">&times;</div>
+  
+    <input type="text" name="subject" placeholder="Subject">
+    <textarea name="content"></textarea>
+     <div id="send-message">Send Mail</div>
+   
+  </form>
+
+
+
+<%= javascript_include_tag 'messages' %>
